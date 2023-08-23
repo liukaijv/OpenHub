@@ -127,12 +127,12 @@ public class TopicsPresenter extends BasePresenter<ITopicsContract.View>
 
     private ArrayList<Topic> getFeaturedTopics(Document doc) throws Exception{
         ArrayList<Topic> topTopics = new ArrayList<>();
-        Elements topElements = doc.getElementsByClass("py-4 border-bottom");
+        Elements topElements = doc.getElementsByClass("py-4 border-bottom d-flex flex-justify-between");
         for (Element element : topElements) {
             Element idElement = element.select("a").first();
             Element imageElement = element.select("a > img").first();
-            Element titleElement = element.select("div > a > div > p").get(0);
-            Element descElement = element.select("div > a > div > p").get(1);
+            Element titleElement = element.select("a > p").get(0);
+            Element descElement = element.select("a > p").get(1);
 
             String id = idElement.attr("href");
             id = id.substring(id.lastIndexOf("/") + 1);

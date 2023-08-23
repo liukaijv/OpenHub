@@ -126,7 +126,7 @@ public class CollectionsPresenter extends BasePresenter<ICollectionsContract.Vie
     private ArrayList<Collection> getBellowCollections(Document doc){
         ArrayList<Collection> collections = new ArrayList<>();
         Elements elements = doc.getElementsByClass(
-                "d-flex border-bottom border-gray-light pb-4 mb-5");
+                "d-flex border-bottom color-border-muted pb-4 mb-5");
         for (Element element : elements) {
             Element titleElement = element.select("div > h2 > a").first();
             Element descElement = element.select("div").last();

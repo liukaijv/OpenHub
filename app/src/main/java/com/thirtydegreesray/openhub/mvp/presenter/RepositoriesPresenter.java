@@ -498,13 +498,13 @@ public class RepositoriesPresenter extends BasePagerPresenter<IRepositoriesContr
     }
 
     private Repository parseTrendingRepositoryData(Element element) throws Exception{
-        String fullName = element.select("h1 > a").attr("href");
+        String fullName = element.select("h2 > a").attr("href");
         fullName = fullName.substring(1);
         String owner = fullName.substring(0, fullName.lastIndexOf("/"));
         String repoName = fullName.substring(fullName.lastIndexOf("/") + 1);
 
-        Element descElement = element.getElementsByClass("col-9 color-text-secondary my-1 pr-4").first();
-        Element numElement = element.getElementsByClass("f6 color-text-secondary mt-2").first();
+        Element descElement = element.getElementsByClass("col-9 color-fg-muted my-1 pr-4").first();
+        Element numElement = element.getElementsByClass("f6 color-fg-muted mt-2").first();
         StringBuilder desc = new StringBuilder("");
         String language = "unknown";
         String starNumStr = "0";
